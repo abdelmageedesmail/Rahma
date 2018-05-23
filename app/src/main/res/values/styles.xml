@@ -14,4 +14,8 @@
         <item name="color">#ffff</item>
         <!--<item name="android:background">@mipmap/menu</item>-->
     </style>
+    <style name="DialogAnimation_2">
+        <item name="android:windowEnterAnimation">@anim/enter_from_left</item>
+        <item name="android:windowExitAnimation">@anim/exit_out_right</item>
+    </style>
 </resources>

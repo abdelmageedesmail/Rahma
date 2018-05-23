@@ -64,8 +64,10 @@
                 android:background="@drawable/edit_text_shape"
                 android:drawableEnd="@mipmap/user"
                 android:drawablePadding="10dp"
-                android:hint="اسم المستخدم"
+                android:hint="@string/email"
                 android:padding="10dp"
+                android:id="@+id/etEmail"
+                android:inputType="textEmailAddress"
                 android:textSize="15sp" />
 
             <EditText
@@ -78,15 +80,17 @@
                 android:background="@drawable/edit_text_shape"
                 android:drawableEnd="@mipmap/password"
                 android:drawablePadding="10dp"
-                android:hint="كلمة المرور"
+                android:hint="@string/password"
+                android:inputType="textPassword"
                 android:padding="10dp"
+                android:id="@+id/etPass"
                 android:textSize="15sp" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="15dp"
-                android:text="هل نسيت كلمة المرور؟" />
+                android:text="@string/forgetPass" />
 
             <Button
                 android:layout_width="match_parent"
@@ -96,7 +100,7 @@
                 android:layout_marginStart="20dp"
                 android:layout_marginTop="15dp"
                 android:background="@drawable/button_shape"
-                android:text="دخول"
+                android:text="@string/login"
                 android:id="@+id/btnLogin"
                 android:textColor="#fff" />
 
@@ -104,7 +108,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:text="ليس لديك حساب ؟ تسجيل"
+                android:text="@string/donotHaveAccount"
                 android:id="@+id/tvRegister"
                 android:textStyle="bold"
                 android:layout_marginBottom="15dp"/>

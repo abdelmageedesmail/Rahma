@@ -4,35 +4,37 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <FrameLayout
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:weightSum="1">
+
+        <LinearLayout
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_margin="10dp">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/addressName"
+                android:textColor="#000"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/tvAddress"
+                android:textColor="@color/colorPrimaryDark"/>
+        </LinearLayout>
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@mipmap/delete_bin"
             android:layout_margin="10dp"
+            android:id="@+id/delete"
             android:layout_marginTop="15dp"/>
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_gravity="end"
-            android:layout_margin="10dp">
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="اسم العنوان"
-                android:textColor="#000"
-                android:layout_gravity="end"/>
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="المدينه المنوره برج الهدى"
-                android:textColor="@color/colorPrimaryDark"/>
-        </LinearLayout>
-
-    </FrameLayout>
+    </LinearLayout>
 
     <View
         android:layout_width="match_parent"
@@ -44,18 +46,17 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:layout_gravity="end"
         android:layout_margin="10dp">
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="رقم المنزل"
+            android:text="@string/homeNumber"
             android:textColor="#000"
-            android:layout_gravity="end"/>
+            />
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="10 شارع المدينه"
+            android:id="@+id/houseNumber"
             android:textColor="@color/colorPrimaryDark"/>
     </LinearLayout>
     <View
@@ -69,18 +70,17 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:layout_gravity="end"
         android:layout_margin="10dp">
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="رقم الدور"
-            android:textColor="#000"
-            android:layout_gravity="end"/>
+            android:text="@string/flatNumber"
+            android:textColor="#000" />
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="الدور العاشر"
+
+            android:id="@+id/tvFloorNumber"
             android:textColor="@color/colorPrimaryDark"/>
     </LinearLayout>
     <View
@@ -97,5 +97,6 @@
         android:layout_marginStart="15dp"
         android:layout_marginEnd="15dp"
         android:text="تعديل"
+        android:layout_marginBottom="10dp"
         android:textColor="#fff"/>
 </LinearLayout>

@@ -14,6 +14,7 @@ public class ChooseUser extends AppCompatActivity {
 
     Button btnDonate,btnMostafeed,btnCharity;
     TextView marqueeTxt;
+    int fromUserType;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -30,7 +31,9 @@ public class ChooseUser extends AppCompatActivity {
         btnDonate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(ChooseUser.this, HomeActivity.class));
+                Intent intent = new Intent(ChooseUser.this, SignUp.class);
+                intent.putExtra("type",1);
+                startActivity(intent);
             }
         });
     }

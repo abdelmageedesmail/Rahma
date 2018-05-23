@@ -4,6 +4,13 @@
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
     <application
         android:allowBackup="true"
@@ -12,6 +19,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyAR7feiZGvjiXm9t3MdoiDFqYbBAmMqAlo" />
+
         <activity android:name=".SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -24,7 +35,10 @@
         <activity android:name=".activities.SignUp" />
         <activity android:name=".activities.ChooseUser" />
         <activity android:name=".activities.donaters.HomeActivity" />
-        <activity android:name=".activities.donaters.AddressListActivity"></activity>
+        <activity android:name=".activities.donaters.AddressListActivity" />
+        <activity
+            android:name=".activities.donaters.MapsActivity"
+            android:label="@string/title_activity_maps"></activity>
     </application>
 
 </manifest>

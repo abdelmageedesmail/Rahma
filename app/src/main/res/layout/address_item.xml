@@ -15,13 +15,18 @@
             android:background="@mipmap/arrow2"
             android:layout_marginTop="15dp"
             android:layout_marginStart="10dp"
-            android:layout_marginEnd="10dp"/>
+            android:layout_marginEnd="10dp"
+            android:layout_gravity="end"/>
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:layout_gravity="end"
             android:layout_margin="10dp">
+            <ImageView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:background="@drawable/address_list" />
+
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -41,10 +46,6 @@
                     android:text="عنوان العمل"/>
             </LinearLayout>
 
-            <ImageView
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:background="@drawable/address_list" />
         </LinearLayout>
     </FrameLayout>
 </android.support.v7.widget.CardView>

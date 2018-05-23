@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">RahmaApp</string>
+    <string name="drawer_open">Open</string>
+    <string name="drawer_close">Close</string>
+    <string name="userName">اسم المستخدم</string>
+    <string name="phone">رقم الجوال</string>
+    <string name="email">البريد الالكتروني</string>
+    <string name="city">المدينه</string>
+    <string name="password">كلمة المرور</string>
+    <string name="confirmPass">تأكيد كلمة المرور</string>
+    <string name="register">تسجيل عضويه</string>
+    <string name="emptyFiled">الحقل فارغ</string>
+    <string name="passwordDontoMatch">كلمتا المرور يجب ان يكونا متطابقين</string>
+    <string name="uploading">جارى التحميل</string>
+    <string name="forgetPass">هل نسيت كلمة المرور؟</string>
+    <string name="login">دخول</string>
+    <string name="donotHaveAccount">ليس لديك حساب ؟ تسجيل</string>
+    <string name="addNewAddress">اضف عنوان جديد</string>
+    <string name="map">الخريطه</string>
+    <string name="addressName">اسم العنوان</string>
+    <string name="typeAddressHere">اكتب العنوان هنا</string>
+    <string name="homeNumber">رقم المنزل</string>
+    <string name="typeHomeNumberHere">اكتب رقم المنزل هنا</string>
+    <string name="flatNumber">رقم الدور</string>
+    <string name="typeFlatNumberHere">اكتب رقم الدور هنا</string>
+    <string name="add">اضافة</string>
+    <string name="noData">لا يوجد بيانات متاحه الان</string>
+</resources>

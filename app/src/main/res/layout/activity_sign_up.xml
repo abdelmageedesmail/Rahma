@@ -65,9 +65,10 @@
                 android:background="@drawable/edit_text_shape"
                 android:drawableEnd="@mipmap/user"
                 android:drawablePadding="10dp"
-                android:hint="اسم المستخدم"
+                android:hint="@string/userName"
+                android:inputType="textPersonName"
+                android:id="@+id/etUserName"
                 android:padding="10dp"
-
                 android:textSize="15sp" />
 
             <EditText
@@ -79,7 +80,9 @@
                 android:background="@drawable/edit_text_shape"
                 android:drawableEnd="@mipmap/password"
                 android:drawablePadding="10dp"
-                android:hint="رقم الجوال"
+                android:hint="@string/phone"
+                android:id="@+id/etPone"
+                android:inputType="phone"
                 android:padding="10dp"
                 android:textSize="15sp" />
 
@@ -93,7 +96,9 @@
                 android:background="@drawable/edit_text_shape"
                 android:drawableEnd="@mipmap/email"
                 android:drawablePadding="10dp"
-                android:hint="البريد الالكتروني"
+                android:hint="@string/email"
+                android:inputType="textEmailAddress"
+                android:id="@+id/etEmail"
                 android:padding="10dp"
                 android:textSize="15sp" />
 
@@ -107,8 +112,11 @@
                 android:background="@drawable/edit_text_shape"
                 android:drawableEnd="@mipmap/location"
                 android:drawablePadding="10dp"
-                android:hint="المدينه"
+                android:focusableInTouchMode="false"
+                android:hint="@string/city"
+                android:inputType="textMultiLine"
                 android:padding="10dp"
+                android:id="@+id/etCity"
                 android:textSize="15sp" />
 
 
@@ -121,8 +129,10 @@
                 android:background="@drawable/edit_text_shape"
                 android:drawableEnd="@mipmap/password"
                 android:drawablePadding="10dp"
-                android:hint="كلمة المرور"
+                android:hint="@string/password"
+                android:inputType="textPassword"
                 android:padding="10dp"
+                android:id="@+id/etPass"
                 android:textSize="15sp" />
 
 
@@ -135,8 +145,10 @@
                 android:background="@drawable/edit_text_shape"
                 android:drawableEnd="@mipmap/password"
                 android:drawablePadding="10dp"
-                android:hint="تاكيد كلمة المرور"
+                android:hint="@string/confirmPass"
+                android:inputType="textPassword"
                 android:padding="10dp"
+                android:id="@+id/etRepeatPass"
                 android:textSize="15sp" />
 
             <TextView
@@ -153,8 +165,8 @@
                 android:layout_marginStart="20dp"
                 android:layout_marginTop="10dp"
                 android:background="@drawable/button_shape"
-                android:text="تسجيل دخول"
-                android:id="@+id/btnLogin"
+                android:text="@string/register"
+                android:id="@+id/btnRegister"
                 android:textColor="#fff" />
         </LinearLayout>
     </android.support.v7.widget.CardView>
