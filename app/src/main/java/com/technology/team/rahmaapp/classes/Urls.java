@@ -7,4 +7,5 @@ public class Urls {
     public static final String addUSerAddress=base_url+"add-user-address";
     public static final String getUSerAddress=base_url+"get-user-addresses";
     public static final String deleteUserAddress=base_url+"delete-user-address";
+    public static final String makeNewDonation=base_url+"make-new-donation";
 }

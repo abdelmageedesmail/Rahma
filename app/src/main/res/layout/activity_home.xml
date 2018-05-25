@@ -22,20 +22,15 @@
                 android:id="@+id/toolbar"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
-                >
 
+                >
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                    android:layout_height="wrap_content"
+                    android:weightSum="1">
 
-                    <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:background="@mipmap/share"
-                        android:visibility="gone"
-                        android:layout_alignParentStart="true"/>
                     <TextView
-                        android:layout_width="wrap_content"
+                        android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
                         android:gravity="center"
@@ -43,8 +38,16 @@
                         android:id="@+id/title"
                         android:layout_centerInParent="true"
                         android:textColor="#fff"
-                        android:visibility="gone"
+                        android:layout_weight="1"
                         android:textStyle="bold" />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@mipmap/share"
+                        android:layout_marginStart="7dp"
+                        android:layout_marginEnd="7dp"/>
+
                 </LinearLayout>
             </android.support.v7.widget.Toolbar>
 
@@ -88,13 +91,15 @@
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:layout_margin="12dp">
+                    android:layout_margin="12dp"
+                    android:id="@+id/liAddNewDonation">
 
                     <LinearLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:orientation="vertical"
-                        android:layout_gravity="center">
+                        android:layout_gravity="center"
+                        >
                         <ImageView
                             android:layout_width="120dp"
                             android:layout_height="100dp"
@@ -102,7 +107,7 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="اضافة تبرع جديد"
+                            android:text="@string/addNewDonation"
                             android:layout_gravity="center"
                             />
                     </LinearLayout>
@@ -127,7 +132,7 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="قائمة العنواين"
+                            android:text="@string/addressList"
                             android:layout_gravity="center"
                             />
                     </LinearLayout>
@@ -159,7 +164,7 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="الاعدادت"
+                            android:text="@string/setting"
                             android:layout_gravity="center"
                             />
                     </LinearLayout>
@@ -183,7 +188,7 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="قائمة التبرعات"
+                            android:text="@string/donationList"
                             android:layout_gravity="center"
                             />
                     </LinearLayout>

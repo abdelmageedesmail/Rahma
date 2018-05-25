@@ -26,4 +26,20 @@
     <string name="typeFlatNumberHere">اكتب رقم الدور هنا</string>
     <string name="add">اضافة</string>
     <string name="noData">لا يوجد بيانات متاحه الان</string>
+    <string name="food">طعام</string>
+    <string name="accessories">مستلزمات</string>
+    <string name="addNewDonation">اضافة تبرع جديد</string>
+    <string name="addressList">قائمة العنواين</string>
+    <string name="donationList">قائمة التبرعات</string>
+    <string name="setting">الاعدادات</string>
+    <string name="foodFor">الطعام يكفي لعدد</string>
+    <string name="morethan10">اكثر من 10 اشخاص</string>
+    <string name="lessthan10">اقل من 10 اشخاص</string>
+    <string name="uploadImageFordonation">اضافة صوره للتبرع</string>
+    <string name="donationDescription">وصف التبرع</string>
+    <string name="donationAddress">عنوان التبرع</string>
+    <string name="publishAddress">نشر التبرع</string>
+    <string name="moreThan3">اكثر من 3</string>
+    <string name="lessThan3">اقل من 3</string>
+    <string name="accessoriesNum">عدد المستلزمات</string>
 </resources>

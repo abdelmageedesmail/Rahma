@@ -26,4 +26,20 @@
     <string name="typeFlatNumberHere">Typ flat number here</string>
     <string name="add">Add</string>
     <string name="noData">No Data available now</string>
+    <string name="food">Food</string>
+    <string name="accessories">Accessories</string>
+    <string name="addNewDonation">Add new donation</string>
+    <string name="addressList">Address list</string>
+    <string name="donationList">Donation list</string>
+    <string name="setting">Setting</string>
+    <string name="foodFor">Food is enough for</string>
+    <string name="morethan10">More than 10 people</string>
+    <string name="lessthan10">Less than 10 people</string>
+    <string name="uploadImageFordonation">add donation image</string>
+    <string name="donationDescription">Donation description</string>
+    <string name="donationAddress">Donation address</string>
+    <string name="publishAddress">Publish donation</string>
+    <string name="moreThan3">More than 3 people</string>
+    <string name="lessThan3">Less than 3 people</string>
+    <string name="accessoriesNum">Accessories number</string>
 </resources>

@@ -31,14 +31,16 @@
             </intent-filter>
         </activity>
         <activity android:name=".activities.LoginActivity" />
-        <activity android:name=".activities.charities.Recyclerlist" />
         <activity android:name=".activities.SignUp" />
         <activity android:name=".activities.ChooseUser" />
         <activity android:name=".activities.donaters.HomeActivity" />
         <activity android:name=".activities.donaters.AddressListActivity" />
         <activity
             android:name=".activities.donaters.MapsActivity"
-            android:label="@string/title_activity_maps"></activity>
+            android:label="@string/title_activity_maps" />
+        <activity android:name=".activities.donaters.AddNewDonation" />
+        <activity android:name=".activities.donaters.AddNewFood" />
+        <activity android:name=".activities.donaters.AddAccessories"></activity>
     </application>
 
 </manifest>

@@ -8,6 +8,7 @@
         <item name="colorAccent">@color/colorAccent</item>
         <item name="drawerArrowStyle">@style/MyDrawerArrowToggle</item>
         <item name="android:fontFamily">@font/cocon_next_arabic_light</item>
+
     </style>
 
     <style name="MyDrawerArrowToggle" parent="Widget.AppCompat.DrawerArrowToggle">
@@ -17,5 +18,10 @@
     <style name="DialogAnimation_2">
         <item name="android:windowEnterAnimation">@anim/enter_from_left</item>
         <item name="android:windowExitAnimation">@anim/exit_out_right</item>
+    </style>
+    <style name="MyCheckBox" parent="Theme.AppCompat.NoActionBar">
+        <item name="colorControlNormal">#e1e1e1</item>   <!-- normal border color change as you wish -->
+        <item name="colorControlActivated">@color/colorAccent</item> <!-- activated color change as you wish -->
+
     </style>
 </resources>

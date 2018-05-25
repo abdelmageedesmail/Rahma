@@ -66,13 +66,12 @@ public class FragmentDrawer extends Fragment {
         super.onCreate(savedInstanceState);
 
         // drawer labels
-//        if (Locale.getDefault().getDisplayLanguage().equals("العربية")) {
+        if (Locale.getDefault().getDisplayLanguage().equals("العربية")) {
             titles = new String[]{"الصفحه الرئيسيه", "الاعدادات", "الملف الشخصى", "من نحن", "اقتراحات", "الرعاة", "خروج"};
-//        }
-//        }else {
-//            titles=new String[]{"Notification","Offers","Our works","Past orders","About us","App policy","Profile Setting","Setting","Contact us"};
+        }else {
+            titles=new String[]{"Home","Setting","profile","About Us","Suggestions","Sponsers","Log out"};
 //
-//        }
+        }
     }
 
     @Override

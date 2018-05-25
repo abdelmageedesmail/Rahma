@@ -25,7 +25,7 @@ public class HomeActivity extends AppCompatActivity implements FragmentDrawer.Fr
     FragmentDrawer drawerFragment;
     Toolbar toolbar;
     TextView marqueeTxt;
-    CardView addressList;
+    CardView addressList,liAddNewDonation;
 
 
     @Override
@@ -33,12 +33,6 @@ public class HomeActivity extends AppCompatActivity implements FragmentDrawer.Fr
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
-        Locale locale = new Locale("ar");
-        Locale.setDefault(locale);
-        Configuration config = new Configuration();
-        config.locale = locale;
-        getBaseContext().getResources().updateConfiguration(config,
-                getBaseContext().getResources().getDisplayMetrics());
         setUpReference();
 
     }
@@ -48,7 +42,7 @@ public class HomeActivity extends AppCompatActivity implements FragmentDrawer.Fr
         marqueeTxt = findViewById(R.id.mywidget);
         addressList=findViewById(R.id.addressList);
         marqueeTxt .setSelected(true);  // Set focus to the textview
-
+        liAddNewDonation=findViewById(R.id.liAddNewDonation);
         drawerFragment = (FragmentDrawer)
                 getSupportFragmentManager().findFragmentById(R.id.fragment_navigation_drawer);
         drawerFragment.setUp(R.id.fragment_navigation_drawer, mDrawerLayout, toolbar);
@@ -57,6 +51,13 @@ public class HomeActivity extends AppCompatActivity implements FragmentDrawer.Fr
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(HomeActivity.this,AddressListActivity.class));
+            }
+        });
+
+        liAddNewDonation.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(HomeActivity.this,AddNewDonation.class));
             }
         });
     }
