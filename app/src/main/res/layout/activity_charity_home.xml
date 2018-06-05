@@ -53,24 +53,14 @@
 
             <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="15dp"
-                android:background="@drawable/toolbar_aya_shape">
+                android:layout_height="match_parent"
+                android:layout_margin="15dp">
+                <ImageView
+                    android:layout_width="70dp"
+                    android:layout_height="100dp"
+                    android:background="@mipmap/logo"
+                    android:layout_centerInParent="true"/>
 
-                <TextView
-                    android:id="@+id/mywidget"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentRight="true"
-                    android:layout_marginBottom="7dp"
-                    android:layout_marginTop="7dp"
-                    android:ellipsize="marquee"
-                    android:fadingEdge="horizontal"
-                    android:marqueeRepeatLimit="marquee_forever"
-                    android:scrollHorizontally="true"
-                    android:singleLine="true"
-                    android:text="وَتَعَاوَنُوا عَلَى الْبِرِّ وَالتَّقْوَى وَلَا تَعَاوَنُوا عَلَى الْإِثْمِ وَالْعُدْوَانِ وَاتَّقُوا اللَّهَ إِنَّ اللَّهَ شَدِيدُ الْعِقَابِ "
-                    android:textColor="#fff" />
             </RelativeLayout>
         </LinearLayout>
 
@@ -107,7 +97,7 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="@string/addNewDonation"
+                            android:text="@string/addNewEmployee"
                             android:layout_gravity="center"
                             />
                     </LinearLayout>
@@ -132,7 +122,7 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="@string/addressList"
+                            android:text="@string/showBeneficiaries"
                             android:layout_gravity="center"
                             />
                     </LinearLayout>
@@ -174,15 +164,13 @@
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:layout_margin="12dp"
-                    android:id="@+id/liDonationList">
+                    android:layout_margin="12dp">
 
                     <LinearLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:orientation="vertical"
-                        android:layout_gravity="center"
-                        >
+                        android:layout_gravity="center">
                         <ImageView
                             android:layout_width="120dp"
                             android:layout_height="100dp"
@@ -190,7 +178,7 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="@string/donationList"
+                            android:text="@string/showEmployee"
                             android:layout_gravity="center"
                             />
                     </LinearLayout>

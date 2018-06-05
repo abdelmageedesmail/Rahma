@@ -15,6 +15,7 @@ public class ChooseUser extends AppCompatActivity {
     Button btnDonate,btnMostafeed,btnCharity;
     TextView marqueeTxt;
     int fromUserType;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -28,11 +29,30 @@ public class ChooseUser extends AppCompatActivity {
         btnCharity=findViewById(R.id.btnCharity);
         marqueeTxt = findViewById(R.id.mywidget);
         marqueeTxt .setSelected(true);  // Set focus to the textview
+
         btnDonate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(ChooseUser.this, SignUp.class);
                 intent.putExtra("type",1);
+                startActivity(intent);
+            }
+        });
+
+        btnMostafeed.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(ChooseUser.this, SignUp.class);
+                intent.putExtra("type",2);
+                startActivity(intent);
+            }
+        });
+
+        btnCharity.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(ChooseUser.this, SignUp.class);
+                intent.putExtra("type",3);
                 startActivity(intent);
             }
         });

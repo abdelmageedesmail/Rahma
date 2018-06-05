@@ -4,14 +4,18 @@ import android.Manifest;
 import android.app.Dialog;
 import android.app.ProgressDialog;
 import android.content.Intent;
+import android.location.Address;
+import android.location.Geocoder;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.TextView;
 
 import com.androidnetworking.AndroidNetworking;
@@ -32,24 +36,35 @@ import com.google.android.gms.maps.model.MarkerOptions;
 import com.jacksonandroidnetworking.JacksonParserFactory;
 import com.technology.team.rahmaapp.R;
 import com.technology.team.rahmaapp.activities.SignUp;
+import com.technology.team.rahmaapp.adapters.MyAdapter;
 import com.technology.team.rahmaapp.classes.GPSTracker;
 import com.technology.team.rahmaapp.classes.LocaleShared;
 import com.technology.team.rahmaapp.classes.Urls;
+import com.technology.team.rahmaapp.models.SpinnerModel;
 
+import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
+
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Locale;
 
 public class MapsActivity extends FragmentActivity implements OnMapReadyCallback {
 
     private GoogleMap mMap;
     GPSTracker mGps;
     TextView marqueeTxt;
-    EditText etAddress,etHomeNum,etflatNum;
+    EditText etHomeNum,etflatNum;
+    EditText etAddress;
     Button btnAdd;
     LocaleShared localeShared;
     private String id;
     int PLACE_PICKER_REQUEST = 1;
     private double longitude, latitude;
+    ArrayList<SpinnerModel> arrayList;
+    private String name;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -66,6 +81,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         marqueeTxt = findViewById(R.id.mywidget);
         marqueeTxt.setSelected(true);
         mGps=new GPSTracker(this);
+        arrayList=new ArrayList<>();
 
     }
 
@@ -90,6 +106,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                 sydney, 15);
         mMap.animateCamera(location);
     }
+
     private void showPopUpAddAddress(){
         Dialog d=new Dialog(this);
         d.setContentView(R.layout.popup_add_address);
@@ -128,6 +145,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
             e.printStackTrace();
         }
     }
+
     private void setUpPermissions() {
         String per[] = {Manifest.permission.ACCESS_FINE_LOCATION, Manifest.permission.ACCESS_FINE_LOCATION};
         ActivityCompat.requestPermissions(this, per, 1);
@@ -138,15 +156,77 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         super.onActivityResult(requestCode, resultCode, data);
         if (requestCode == PLACE_PICKER_REQUEST) {
             if (resultCode == RESULT_OK) {
-                Place place = PlacePicker.getPlace(data, this);
-                String toastMsg = String.format(String.valueOf(place.getAddress()));
-                LatLng latLng = place.getLatLng();
-                latitude = latLng.latitude;
-                longitude = latLng.longitude;
-                etAddress.setText(toastMsg);
+                final Place place = PlacePicker.getPlace(this,data);
+                Geocoder geocoder = new Geocoder(this);
+                try
+                {
+                    List<Address> addresses = geocoder.getFromLocation(place.getLatLng().latitude,place.getLatLng().longitude, 1);
+                    String address = addresses.get(0).getAddressLine(0);
+                    String[] split = address.split(",");
+                    String city = addresses.get(0).getAddressLine(1);
+                    //String country = addresses.get(0).getAddressLine(2);
+                    etAddress.setText(split[1]+" , "+split[2]);
+                    LatLng latLng = place.getLatLng();
+                    latitude=latLng.latitude;
+                    longitude=latLng.longitude;
+                } catch (IOException e)
+                {
+
+                    e.printStackTrace();
+                }
             }
         }
     }
+
+//    private void getCities(){
+//        AndroidNetworking.initialize(this);
+//        AndroidNetworking.setParserFactory(new JacksonParserFactory());
+//        AndroidNetworking.get(Urls.getCities)
+//                .setPriority(Priority.MEDIUM)
+//                .build()
+//                .getAsJSONObject(new JSONObjectRequestListener() {
+//                    @Override
+//                    public void onResponse(JSONObject response) {
+//                        try {
+//                            String status = response.getString("status");
+//                            if (status.equals("1")){
+//                                JSONArray cities = response.getJSONArray("cities");
+//                                for (int i=0;i<cities.length();i++){
+//                                    JSONObject object=cities.getJSONObject(i);
+//                                    SpinnerModel spinnerModel=new SpinnerModel();
+//                                    spinnerModel.setId(object.getString("id"));
+//                                    if (Locale.getDefault().getDisplayLanguage().equals("العربية")){
+//                                        spinnerModel.setName(object.getString("name_ar"));
+//                                    }else{
+//                                        spinnerModel.setName(object.getString("name_en"));
+//                                    }
+//                                    arrayList.add(spinnerModel);
+//                                }
+//                                etAddress.setAdapter(new MyAdapter(MapsActivity.this,arrayList));
+//                                etAddress.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+//                                    @Override
+//                                    public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+//                                        name = arrayList.get(i).getName();
+//                                    }
+//
+//                                    @Override
+//                                    public void onNothingSelected(AdapterView<?> adapterView) {
+//
+//                                    }
+//                                });
+//                            }
+//                        } catch (JSONException e) {
+//                            e.printStackTrace();
+//                        }
+//                    }
+//
+//                    @Override
+//                    public void onError(ANError anError) {
+//
+//                    }
+//                });
+//    }
+
     private void addAddress(){
         final ProgressDialog progressDialog = new ProgressDialog(this);
         progressDialog.setIndeterminate(true);

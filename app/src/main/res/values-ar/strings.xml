@@ -42,4 +42,19 @@
     <string name="moreThan3">اكثر من 3</string>
     <string name="lessThan3">اقل من 3</string>
     <string name="accessoriesNum">عدد المستلزمات</string>
+    <string name="needCharityHelp">هل تود مساعده من الجمعيات ؟</string>
+    <string name="DonationAdded">تم اضافة التبرع</string>
+    <string name="DonationSection">قسم التبرع</string>
+    <string name="foodQuantity">كمية الطعام</string>
+    <string name="donationPlace">موقع التبرع</string>
+    <string name="Receive_your_donation">استلام التبرع</string>
+    <string name="donationIsRecieved">هل استلمت التبرع؟</string>
+    <string name="IneedThisDonation">نعم احتاج هذا التبرع</string>
+    <string name="yesIRecieved">نعم استلمته</string>
+    <string name="strillInRoad">مازال في الطريق</string>
+    <string name="iDonotNeed">لم اعد ارغب فى هذا التبرع</string>
+    <string name="addNewEmployee">اضافة موظفين</string>
+    <string name="showBeneficiaries">عرض المتبرعين</string>
+    <string name="showEmployee">عرض الموظفين</string>
+    <string name="youAddedUserSuccessfully">لقد تم اضافة موظف بنجاح</string>
 </resources>

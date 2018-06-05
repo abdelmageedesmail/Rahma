@@ -40,7 +40,14 @@
             android:label="@string/title_activity_maps" />
         <activity android:name=".activities.donaters.AddNewDonation" />
         <activity android:name=".activities.donaters.AddNewFood" />
-        <activity android:name=".activities.donaters.AddAccessories"></activity>
+        <activity android:name=".activities.donaters.AddAccessories" />
+        <activity
+            android:name=".activities.mostafeed.MostafeedHomeActivity"
+            android:label="@string/title_activity_mostafeed_home" />
+        <activity android:name=".activities.mostafeed.DonateRecieveActivity" />
+        <activity android:name=".activities.charities.CharityHomeActivity" />
+        <activity android:name=".activities.charities.AddEmployee" />
+        <activity android:name=".activities.donaters.MyDonations"></activity>
     </application>
 
 </manifest>

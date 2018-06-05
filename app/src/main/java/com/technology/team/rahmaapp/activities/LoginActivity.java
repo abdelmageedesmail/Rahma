@@ -16,7 +16,9 @@ import com.androidnetworking.error.ANError;
 import com.androidnetworking.interfaces.JSONObjectRequestListener;
 import com.jacksonandroidnetworking.JacksonParserFactory;
 import com.technology.team.rahmaapp.R;
+import com.technology.team.rahmaapp.activities.charities.CharityHomeActivity;
 import com.technology.team.rahmaapp.activities.donaters.HomeActivity;
+import com.technology.team.rahmaapp.activities.mostafeed.MostafeedHomeActivity;
 import com.technology.team.rahmaapp.classes.LocaleShared;
 import com.technology.team.rahmaapp.classes.Urls;
 
@@ -25,10 +27,11 @@ import org.json.JSONObject;
 
 public class LoginActivity extends AppCompatActivity {
 
-    TextView marqueeTxt,tvRegister;
+    TextView marqueeTxt,tvRegister,onlineQ;
     Button btnLogin;
     EditText etEmail,etpass;
     private LocaleShared localeShared;
+    private String type;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,7 +47,8 @@ public class LoginActivity extends AppCompatActivity {
         tvRegister=findViewById(R.id.tvRegister);
         etEmail=findViewById(R.id.etEmail);
         etpass=findViewById(R.id.etPass);
-
+        onlineQ=findViewById(R.id.onlineQ);
+        LocaleShared localeShared=new LocaleShared(this);
         tvRegister.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -62,7 +66,15 @@ public class LoginActivity extends AppCompatActivity {
                 }
             });
         }else{
-            startActivity(new Intent(LoginActivity.this, HomeActivity.class));
+            String userType = localeShared.getKey("type");
+            if (userType .equals("2")){
+                startActivity(new Intent(LoginActivity.this, MostafeedHomeActivity.class));
+            }else if (userType.equals("3")){
+                startActivity(new Intent(LoginActivity.this, CharityHomeActivity.class));
+            }else{
+                startActivity(new Intent(LoginActivity.this, HomeActivity.class));
+            }
+
         }
     }
 
@@ -100,11 +112,19 @@ public class LoginActivity extends AppCompatActivity {
                                 localeShared.storeKey("name", user.getString("name"));
                                 localeShared.storeKey("phone", user.getString("phone"));
                                 localeShared.storeKey("email", user.getString("email"));
-                                localeShared.storeKey("type",user.getString("type"));
+                                type = user.getString("type");
+                                localeShared.storeKey("type",type);
                                 SharedPreferences sh = getSharedPreferences("userData", MODE_PRIVATE);
                                 SharedPreferences.Editor edit = sh.edit();
                                 edit.putBoolean("userExist", true).apply();
-                                startActivity(new Intent(LoginActivity.this, HomeActivity.class));
+                                if (user.getString("type").equals("2")){
+                                    startActivity(new Intent(LoginActivity.this, MostafeedHomeActivity.class));
+                                }else if (type.equals("3")){
+                                    startActivity(new Intent(LoginActivity.this, CharityHomeActivity.class));
+                                }else {
+                                    startActivity(new Intent(LoginActivity.this, HomeActivity.class));
+                                }
+
                             }
                         } catch (JSONException e) {
                             e.printStackTrace();

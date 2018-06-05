@@ -42,4 +42,24 @@
     <string name="moreThan3">More than 3 people</string>
     <string name="lessThan3">Less than 3 people</string>
     <string name="accessoriesNum">Accessories number</string>
+    <string name="needCharityHelp">Need charity help ?</string>
+    <string name="title_activity_mostafeed_home">Map</string>
+    <string name="DonationAdded">Donation added</string>
+    <string name="DonationSection">Donation Section</string>
+    <string name="foodQuantity">Food quantity</string>
+    <string name="donationPlace">Donation place</string>
+    <string name="Receive_your_donation">Receive your donation</string>
+    <string name="donationIsRecieved">Did you receive the donation?</string>
+    <string name="iNeedThisDonation">Yes I need this donation</string>
+    <string name="yesIRecieved">Yes i received</string>
+    <string name="strillInRoad">Still in away</string>
+    <string name="iDonotNeed">I do not need it</string>
+    <string name="addNewEmployee">Add employee</string>
+    <string name="showBeneficiaries">Show beneficiaries</string>
+    <string name="showEmployee">Show employee</string>
+    <string name="youAddedUserSuccessfully">You added employee successfully</string>
+    <string name="foodForMore10">There is enough food for 10 people</string>
+    <string name="foodForLess10">There is enough food for 3 people</string>
+    <string name="accessoriesForMore10">There is enough accessories for 10 people</string>
+    <string name="accessoriesForLess10">There is enough accessories for 3 people</string>
 </resources>
